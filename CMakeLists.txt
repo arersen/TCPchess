@@ -31,5 +31,5 @@ link_directories(${GLFW3_LIBRARY_DIRS})
 add_executable(TCPchess ${SOURCES} ${HEADERS})
 
 target_include_directories(TCPchess PRIVATE include)
-target_link_libraries(TCPchess PRIVATE OpenGL::GL ${GLFW3_LIBRARIES}  GLEW::GLEW)
+target_link_libraries(TCPchess PRIVATE OpenGL::GL ${GLFW3_LIBRARIES}  GLEW::GLEW m)
 target_compile_options(TCPchess PRIVATE -g  -Wall -Wextra -O2)
