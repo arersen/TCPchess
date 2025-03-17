@@ -3,6 +3,7 @@
 #include <stdio.h>
 
 #include "window/window.h"
+#include "chess/gui.h"
 
 GLFWwindow* window;
 
@@ -15,6 +16,8 @@ int main(void){
 	while(!glfwWindowShouldClose(window)){
 		glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
+
+		draw_chess_board();
 
 		glfwSwapBuffers(window);
 		

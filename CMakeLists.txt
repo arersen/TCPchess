@@ -9,12 +9,14 @@ set(CMAKE_C_STANDARD 11)
 set(SOURCES
 	main.c
 	window/window.c
+	chess/gui.c
 
 )
 
 set(HEADERS
 	main.h
 	window/window.h
+	chess/gui.h
 )
 
 find_package(OpenGL REQUIRED)
