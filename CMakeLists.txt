@@ -8,17 +8,26 @@ set(CMAKE_C_STANDARD 11)
 
 set(SOURCES
 	main.c
-	other.c
+	window/window.c
 
 )
 
 set(HEADERS
 	main.h
-	other.h
+	window/window.h
 )
+
+find_package(OpenGL REQUIRED)
+find_package(GLEW REQUIRED)
+find_package(PkgConfig REQUIRED)
+
+pkg_check_modules(GLFW3 REQUIRED glfw3)
+
+include_directories(${GLFW3_INCLUDE_DIRS})
+link_directories(${GLFW3_LIBRARY_DIRS})
 
 add_executable(TCPchess ${SOURCES} ${HEADERS})
 
 target_include_directories(TCPchess PRIVATE include)
-
+target_link_libraries(TCPchess PRIVATE OpenGL::GL ${GLFW3_LIBRARIES}  GLEW::GLEW)
 target_compile_options(TCPchess PRIVATE -g  -Wall -Wextra -O2)
